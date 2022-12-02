@@ -1,0 +1,121 @@
+<?php 
+$include_option="printing" ;
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printing Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js"></script>
+</head>
+<body>
+
+<?php 
+
+
+include('includes/db_connection.php'); 
+
+$error = "";
+$success="";
+
+try {
+if(isset($_POST['iemail'])){
+
+    $json = json_encode($_POST,true);
+ 
+    
+    $email =$db->real_escape_string($_POST['iemail']) ; 
+    $password = $db->real_escape_string($_POST['ipassword']) ; 
+    $username = $db->real_escape_string($_POST['iusername']) ; 
+    $phonenumber = $db->real_escape_string($_POST['iphone']) ; 
+    $password=password_hash($password, PASSWORD_DEFAULT);
+
+$query = "insert into user_registration (Username,email, passwordhash,phonenumber) values (?,?,?,?)" ; 
+    $statement = $db->prepare($query);
+    $statement->bind_param("ssss",$username,$email, $password,$phonenumber) ; 
+ 
+
+    $statement->execute();
+    
+    if ($statement) {
+
+        $success="The user was created successfully!" ;
+     
+    }
+    else {
+
+        $login_err="There was an error creating the user"   ; 
+    }
+  
+   // echo $query  ;
+}
+} catch(Expection $e){
+
+    $error = 'Caught exception: '.  $e->getMessage(). "\n";
+}
+
+function decodeBase64($data) {
+   // $data = str_replace(' ', '+', $data);
+    return base64_decode($data);
+}
+
+ 
+
+  function printValuesFromJson($json) {
+    $json = json_decode($json, true);
+    foreach ($json as $key => $value) {
+        if ($key == "ipassword" ) {
+            $value = decodeBase64($value);
+        }
+      echo $key . ' : ' . $value . '<br>';
+    }
+  }
+?>
+ 
+ 
+ <div class="main">
+<header>
+    <nav>
+
+    <div class="navBottom">
+<div class="menuItem">
+<!-- <img src="images/shop.png" alt="" width="100" > -->
+</div>
+
+ 
+</div>
+
+
+
+    </nav>
+</header>
+
+
+<section class="shop container" id="shop-container">
+   
+<h2 class="section-title">Printing Page</h2>
+
+
+<!-- Content -->
+<div class="shop-content">
+<?php 
+printValuesFromJson($json);
+?>
+
+ 
+ 
+</div>
+
+
+</section>
+</div>
+<footer>
+<p>Copyright @2022 | Jose Alberto Martinez Pineda 8804056</p>
+    
+</footer>
+</body>
+</html>

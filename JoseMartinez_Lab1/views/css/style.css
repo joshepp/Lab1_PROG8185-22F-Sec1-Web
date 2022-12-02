@@ -1,0 +1,217 @@
+/*Jose Martinez Web Midterm*/
+
+body {
+    padding: 0;
+    margin: 0;
+
+}
+
+img {
+    object-fit: cover;
+
+}
+
+nav {
+
+    background-color: #0363E1;
+    color: white;
+    padding: 20px 50px;
+}
+
+.navTop {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.container {
+
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+
+}
+
+section {
+
+    padding: 4rem 0 3rem;
+}
+
+
+
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+.shop {
+
+    margin-top: 2rem;
+}
+
+
+.shop-content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+
+.product-box {
+
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+}
+
+.product-box:hover {
+    padding: 40px;
+    border: 1px solid;
+    border-color: rgb(0, 110, 255);
+    transition: 0.4s;
+}
+
+.product-img {
+
+    width: 400px;
+    height: 300px;
+    margin-bottom: 0.5rem;
+    object-fit: fill;
+
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+
+    font-weight: 500;
+
+}
+
+
+footer {
+
+    font-size: 20px;
+    text-align: center;
+    padding: 40px;
+    background-color: #000A64;
+    color: white;
+}
+
+
+
+
+/*cart  **/
+input,
+button {
+    width: 100%;
+    border: none;
+    padding: 14px;
+    border-radius: 3px;
+}
+
+input {
+    border: 2px solid #DADDEC;
+    margin: 5px 0 10px;
+    font-size: 1rem;
+    color: #656880;
+}
+
+.form button {
+    background-image: linear-gradient(to right, #89CAFF, #6589FF);
+    display: block;
+    font-size: 1rem;
+    box-shadow: 0 5px 20px #89caff94;
+    transition: box-shadow .3s ease-in-out;
+}
+
+
+.cartcontainer {
+    width: 800px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    line-height: 1.5;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
+    padding: 10px 40px 10px 40px;
+
+}
+
+.menuItem a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.submit {
+    background:  #0363E1;
+    color: white;
+    cursor: pointer;
+}
+
+#ierror {
+ color: red;
+ 
+}
+
+#icorrect {
+
+    color: rgb(21, 197, 21) ;
+    font-size: large;
+}
+ 
+.hide  {
+
+    display: none;
+
+}
+
+.show  {
+
+    display: inline;
+
+}
+
+.orders {
+    width: 1000px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
+    padding: 10px 40px 10px 40px;
+
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color:#3e8aee;
+    color : white;
+  }

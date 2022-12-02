@@ -1,0 +1,76 @@
+
+<?php 
+$include_option="registration_page" ;
+//include('includes/login_check.php'); 
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+ 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="main">
+<header>
+    <nav>
+
+    <div class="navBottom">
+<div class="menuItem">
+<!-- <img src="images/shop.png" alt="" width="100" > -->
+</div>
+
+ 
+</div>
+
+
+
+    </nav>
+</header>
+
+
+<section class="shop container" id="shop-container">
+   
+<h2 class="section-title">Registration Page</h2>
+
+
+<!-- Content -->
+<div class="shop-content">
+
+<form class="form" name="myform" id="myForm" method="post"  onsubmit="return validate()">
+
+<label for="lusername">User Name: </label><input type="text" name="iusername" id="iusername"> 
+<label class="hide" id="rusername" style="color: red">Error</label><br>
+                           
+                         <label for="lemail">Email: </label><input type="email" name="iemail" id="iemail"> 
+          <label class="hide" id="remail" style="color: red">Error</label><br>
+                        <label for="lpassword">Password: </label><input type="password" name="ipassword" id="ipassword"
+                            placeholder="password"> <br>
+                            <label class="hide" id="rpassword" style="color: red">Error</label><br>
+                            <label for="lphone">Phone: </label><input type="phone" name="iphone" id="iphone"><br><br>
+                            <label class="hide" id="rphone" style="color: red">Error</label><br>
+                            <input class="submit" type="submit" value="Register">
+                            <input class="submit" type="button" value="Cancel" onclick="redirect()">
+
+                    </form>
+ 
+ 
+</div>
+
+
+</section>
+</div>
+<footer>
+<p>Copyright @2022 | Jose Alberto Martinez Pineda 8804056</p>
+    
+</footer>
+
+</body>
+</html>
